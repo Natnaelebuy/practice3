@@ -52,7 +52,7 @@ public class Main
 
             while (true)
             {
-                System.out.println("1= start, 2 = pause, 3 = resume, 4 = restart, 5 = stop, 6 = Jump to spectific time");
+                System.out.println("1 = pause, 2 = resume, 3 = restart, 4 = stop, 5 = Jump to spectific time");
                 int c = sc.nextInt();
                 audioPlayer.gotoChoice(c);
                 if (c == 4)
@@ -75,17 +75,16 @@ public class Main
         switch (c) 
         {
             
-            case 1: clip.start();
+            
+            case 1: pause();
                break;
-            case 2: pause();
+            case 2:resumeAudio();
                break;
-            case 3:resumeAudio();
+            case 3:restart();
                break;
-            case 4:restart();
+            case 4:stop();
                break;
-            case 5:stop();
-               break;
-            case 6:clip.setMicrosecondPosition(0);
+            case 5:clip.setMicrosecondPosition(0);
                 break;
 
       
