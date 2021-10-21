@@ -54,11 +54,7 @@ public class Main
             while (true)
             {
                 System.out.println("1 = pause, 2 = resume, 3 = restart, 4 = stop, 5 = Jump to spectific time");
-                //System.out.println("1. pause");
-                //System.out.println("2. resume");
-                //System.out.println("3. restart");
-                //System.out.println("4. stop");
-                //System.out.println("5. Jump to specific time");
+                
                 int c = sc.nextInt();
                 audioPlayer.gotoChoice(c);
                 if (c == 4)
@@ -94,12 +90,16 @@ public class Main
             case 4:
                 stop();
                 break;
-            case 5:
-                System.out.println("Enter time (" + 0 + 
-                ", " + clip.getMicrosecondLength() + ")");
-                Scanner sc = new Scanner(System.in);
-                long c1 = sc.nextLong();
-                jump(c1);
+                
+            case 5: clip.setMicrosecondPosition(0);
+                
+            
+                //System.out.println("Enter time (" + 0 + 
+                //", " + clip.getMicrosecondLength() + ")");
+                
+                //Scanner sc = new Scanner(System.in);
+                //long c1 = sc.nextLong();
+                //jump(c1);
                 break;
       
         }
@@ -191,6 +191,13 @@ public class Main
         new File(filePath).getAbsoluteFile());
         clip.open(audioInputStream);
         clip.loop(Clip.LOOP_CONTINUOUSLY);
+
+       
+
+    
+    
+    
+    
     }
   
 }
