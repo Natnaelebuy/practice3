@@ -10,12 +10,9 @@ import javax.sound.sampled.UnsupportedAudioFileException;
   
 public class Main 
 {
-  
-    // to store current position
     Long currentFrame;
     Clip clip;
-      
-    // current status of clip
+       
     String status;
       
     AudioInputStream audioInputStream;
@@ -45,16 +42,17 @@ public class Main
         {
             filePath = "Drake - Girls Want Girls.wav";
             filePath = "Drake - No Friends In The Industry.wav";
+            filePath = "Stop Living A Lie.wav";
+            filePath = "CKay - Love Nwantiti.wav";
+            
             Main audioPlayer = 
                             new Main();
-              
             audioPlayer.play();
             Scanner sc = new Scanner(System.in);
-              
+
             while (true)
             {
-                System.out.println("1 = pause, 2 = resume, 3 = restart, 4 = stop, 5 = Jump to spectific time");
-                
+                System.out.println("1= start, 2 = pause, 3 = resume, 4 = restart, 5 = stop, 6 = Jump to spectific time");
                 int c = sc.nextInt();
                 audioPlayer.gotoChoice(c);
                 if (c == 4)
@@ -71,49 +69,34 @@ public class Main
           }
     }
       
-    // Work as the user enters his choice
-      
     private void gotoChoice(int c)
             throws IOException, LineUnavailableException, UnsupportedAudioFileException 
     {
         switch (c) 
         {
-            case 1:
-                pause();
-                break;
-            case 2:
-                resumeAudio();
-                break;
-            case 3:
-                restart();
-                break;
-            case 4:
-                stop();
-                break;
-                
-            case 5: clip.setMicrosecondPosition(0);
-                
             
-                //System.out.println("Enter time (" + 0 + 
-                //", " + clip.getMicrosecondLength() + ")");
-                
-                //Scanner sc = new Scanner(System.in);
-                //long c1 = sc.nextLong();
-                //jump(c1);
+            case 1: clip.start();
+               break;
+            case 2: pause();
+               break;
+            case 3:resumeAudio();
+               break;
+            case 4:restart();
+               break;
+            case 5:stop();
+               break;
+            case 6:clip.setMicrosecondPosition(0);
                 break;
+
       
         }
       
     }
-      
-    
-
-    // Method to play the audio
+      // Method to play the audio
     public void play() 
     {
         //start the clip
         clip.start();
-          
         status = "play";
     }
       
