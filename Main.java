@@ -44,6 +44,7 @@ public class Main
         try
         {
             filePath = "Drake - Girls Want Girls.wav";
+            filePath = "Drake - No Friends In The Industry.wav";
             Main audioPlayer = 
                             new Main();
               
@@ -52,11 +53,12 @@ public class Main
               
             while (true)
             {
-                System.out.println("1. pause");
-                System.out.println("2. resume");
-                System.out.println("3. restart");
-                System.out.println("4. stop");
-                System.out.println("5. Jump to specific time");
+                System.out.println("1 = pause, 2 = resume, 3 = restart, 4 = stop, 5 = Jump to spectific time");
+                //System.out.println("1. pause");
+                //System.out.println("2. resume");
+                //System.out.println("3. restart");
+                //System.out.println("4. stop");
+                //System.out.println("5. Jump to specific time");
                 int c = sc.nextInt();
                 audioPlayer.gotoChoice(c);
                 if (c == 4)
@@ -104,6 +106,8 @@ public class Main
       
     }
       
+    
+
     // Method to play the audio
     public void play() 
     {
