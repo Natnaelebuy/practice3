@@ -55,7 +55,7 @@ public class Main
                 System.out.println("1 = pause, 2 = resume, 3 = restart, 4 = stop, 5 = Jump to spectific time");
                 int c = sc.nextInt();
                 audioPlayer.gotoChoice(c);
-                if (c == 4)
+                if (c == 10)
                 break;
             }
             sc.close();
@@ -74,8 +74,6 @@ public class Main
     {
         switch (c) 
         {
-            
-            
             case 1: pause();
                break;
             case 2:resumeAudio();
