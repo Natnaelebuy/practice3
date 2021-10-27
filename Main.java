@@ -41,9 +41,11 @@ public class Main
         try
         {
             filePath = "Drake - Girls Want Girls.wav";
-            filePath = "Drake - No Friends In The Industry.wav";
             filePath = "Stop Living A Lie.wav";
             filePath = "CKay - Love Nwantiti.wav";
+            filePath = "Drake - No Friends In The Industry.wav";
+            
+            
             
             Main audioPlayer = 
                             new Main();
